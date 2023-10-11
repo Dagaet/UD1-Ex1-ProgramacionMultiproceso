@@ -10,6 +10,7 @@ public class ProcessLauncher {
     public static final String OUTPUT_ROUTE = "./src/net/salesianos/ejercicio/outputs/cositas.txt";
     public static final String COUNTER_ROUTE = "./src/net/salesianos/ejercicio/processes/CharCounter.java";
     public static final String TEXT = Utils.textObtainer();
+    
     public static final File OUTPUT_FILE = new File(OUTPUT_ROUTE);
     public static Process initVowelProcess(String vowel){
         ProcessBuilder processBuilder = new ProcessBuilder(
