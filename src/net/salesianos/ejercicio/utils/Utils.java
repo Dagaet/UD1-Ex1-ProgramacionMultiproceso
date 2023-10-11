@@ -40,6 +40,7 @@ public class Utils {
                 }
             }
             System.out.println("Total vowels: " + vowelcount);
+            bufferedReader2.close();
         } catch (FileNotFoundException e) {
             // TODO: handle exception
             e.printStackTrace();
