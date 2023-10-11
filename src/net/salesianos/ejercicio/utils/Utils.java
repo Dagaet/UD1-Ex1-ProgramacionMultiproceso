@@ -1,6 +1,7 @@
 package net.salesianos.ejercicio.utils;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,5 +25,35 @@ public class Utils {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void vowelPrinter(File outputFile, String[] vowels){
+        try {
+            BufferedReader bufferedReader2 = new BufferedReader(new FileReader(outputFile));
+            String line = bufferedReader2.readLine();
+            int vowelcount = 0;
+            for (String vowel : vowels) {
+                if (line != null) {
+                    System.out.println("Text has " + line + " vowels " + vowel);
+                    vowelcount += conversorLine(line);
+                    line = bufferedReader2.readLine();
+                }
+            }
+            System.out.println("Total vowels: " + vowelcount);
+        } catch (FileNotFoundException e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    private static Integer conversorLine(String line){
+        try {
+            return Integer.parseInt(line);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 }
